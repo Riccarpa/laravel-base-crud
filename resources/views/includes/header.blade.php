@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           
-          <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" aria-current="page" href="{{route('home')}}">Home</a>
@@ -12,6 +12,7 @@
               </li>
               
             </ul>
+           
           </div>
         </div>
       </nav>

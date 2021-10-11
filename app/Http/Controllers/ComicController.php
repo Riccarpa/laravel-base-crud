@@ -11,9 +11,11 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {   $comics= Comic::all();
-        return view('comics.index',compact('comics'));
+    public function index(Request $request)
+    {   
+        $search = $request->query('search');
+        $comics= Comic::where('title','LIKE',"%$search%")->get();
+        return view('comics.index',compact('comics','search'));
     }
 
     /**
@@ -43,9 +45,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        $comic=Comic::findOrFail($id);
+    public function show(Comic $comic)
+   {
+        // $comic=Comic::findOrFail($id);
         
         return view('comics.show',compact('comic'));
     }
