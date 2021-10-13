@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="container">
-      <form class="mb-4 d-flex align-items-center justify-content-end">
+      <form class="m-4 d-flex align-items-center justify-content-end">
             <input type="text" class="form-control me-2 w-25 " placeholder="Cerca un fumetto" name='search' value="{{$search}}">
             <button type="submit" class="btn-sm btn btn-primary">Submit</button>
       </form>

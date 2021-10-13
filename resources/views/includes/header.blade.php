@@ -10,7 +10,9 @@
               <li class="nav-item">
                 <a class="nav-link {{ request()->is('comics') ? 'active' : '' }}" href="{{url('/comics')}}">Comics</a>
               </li>
-              
+              <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('comics.create') ? 'active' : '' }}" href="{{route('comics.create')}}">New Comic</a>
+              </li>
             </ul>
            
           </div>
