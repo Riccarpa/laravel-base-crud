@@ -17,6 +17,7 @@
                 <h5 class="card-title">{{$comic->title}}</h5>
                 <p>{{$comic->price}}€</p>
                 <a href="{{route('comics.show',$comic->id)}}" class="btn btn-primary">Dettagli</a>
+                <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-warning">Modifica</a>
               </div>
             </div>
           @endforeach

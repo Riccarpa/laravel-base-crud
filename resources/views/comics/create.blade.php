@@ -30,7 +30,7 @@
               <input type="date" class="form-control" name="sale_date" id="release_date">
             </div>
             <div class="col-md-4">
-                <label for="price"  class="form-label">Tipo fumetto</label>
+                <label for="price"  class="form-label">Prezzo</label>
                 <input type="text" class="form-control" id="price" name="price">
             </div>
             <div class="col-md-12 d-flex justify-content-end"><button type="submit" class="btn  btn-primary">Crea</button></div>
