@@ -11,5 +11,7 @@
     @include('includes.header')
 
     @yield('content')
+
+    @yield('script')
 </body>
 </html>
