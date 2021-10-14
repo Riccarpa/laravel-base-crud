@@ -1,19 +1,11 @@
 @extends('layouts.main')
 
-@section('title','comics')
+@section('title','deleted')
 
 @section('content')
 
     <div class="container">
-      <form class="m-4 d-flex align-items-center justify-content-end">
-            <input type="text" class="form-control me-2 w-25 " placeholder="Cerca un fumetto" name='search' value="{{$search}}">
-            <button type="submit" class="btn-sm btn btn-primary">Submit</button>
-      </form>
-      @if (session('delete'))
-      <div class="alert alert-success" role="alert">
-        <h4>{{session('delete')}} Eliminata con successo</h4>
-      </div>
-      @endif
+     
       <div class="d-flex">
           @foreach ($comics as $comic)
           <div class="card m-2" style="width: 18rem;">
@@ -34,21 +26,5 @@
             </div>
           @endforeach
       </div>
-      <div class="text-end mb-4"  ><a href="{{route('comics.trash')}}">Cestino</a></div>
     </div>
 @endsection
-
-@section('script')
-    <script>
-        const deleteElement = document.getElementById("delete-comic");
-        
-        deleteElement.addEventListener('submit',function(event){
-          event.preventDefault();
-          const conf = window.confirm('Sei sicuro di voler eliminare il fumetto');
-          if(conf) this.submit();
-        })
-    </script>
-@endsection
-    
-
-    

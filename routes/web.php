@@ -15,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index')->name('home');
 
+
+Route::get('/comics/trash','ComicController@trash')->name('comics.trash');
+
 Route::resource('comics','ComicController');
