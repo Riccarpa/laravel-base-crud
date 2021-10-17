@@ -16,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/','HomeController@index')->name('home');
 
 
-Route::get('/comics/trash','ComicController@trash')->name('comics.trash');
-Route::patch('/comics/{comic}/restore','ComicController@restore')->name('comics.restore');
-Route::delete('/comics/{comic}/forceDelete','ComicController@forceDelete')->name('comics.forceDelete');
-
-
-
 Route::resource('comics','ComicController');
+Route::resource('trash','TrashController');
+

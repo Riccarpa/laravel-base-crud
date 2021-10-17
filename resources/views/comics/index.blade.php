@@ -9,7 +9,7 @@
             <input type="text" class="form-control me-2 w-25 " placeholder="Cerca un fumetto" name='search' value="{{$search}}">
             <button type="submit" class="btn-sm btn btn-primary">Submit</button>
       </form>
-      <div class="text-start mb-4 "><a href="{{route('comics.trash')}}">Cestino</a></div>
+      <div class="text-start mb-4 "><a href="{{route('trash.index')}}">Cestino</a></div>
       @if (session('delete'))
       <div class="alert alert-success" role="alert">
         <h4>"{{session('delete')}}" eliminata con successo</h4>

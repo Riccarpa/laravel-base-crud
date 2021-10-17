@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container text-light">
     @if($comic->exists)
     <form method="POST" action="{{route('comics.update',$comic->id)}}" class="row g-3">
     @method('PATCH')

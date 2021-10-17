@@ -18,12 +18,12 @@
                 <h5 class="card-title">{{$comic->title}}</h5>
                 <p>{{$comic->price}}€</p>
                 <div class="d-flex">
-                  <form method="POST" action="{{route('comics.restore',$comic->id)}}" id="restore-comic">
+                  <form method="POST" action="{{route('trash.update',$comic->id)}}" id="restore-comic">
                     @method('patch')
                     @csrf
                     <button type="submit" class="btn btn-success me-1 ">Ripristina</button>
                   </form>
-                  <form method="POST" action="{{route('comics.forceDelete',$comic->id)}}" id="delete-comic">
+                  <form method="POST" action="{{route('trash.destroy',$comic->id)}}" id="delete-comic">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Elimina</button>

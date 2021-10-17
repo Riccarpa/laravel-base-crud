@@ -99,20 +99,20 @@ class ComicController extends Controller
         return redirect()->route('comics.index')->with('delete',$comic->title);
     }
 
-    public function trash(){
-        $comics = Comic::onlyTrashed()->get();
-        return view('comics.trash',compact('comics'));
-    }
+    // public function trash(){
+    //     $comics = Comic::onlyTrashed()->get();
+    //     return view('comics.trash',compact('comics'));
+    // }
 
-    public function restore($id){
-       $comic = Comic::withTrashed()->find($id);
-        $comic->restore();
-        return redirect()->route('comics.index')->with('restore', $comic->title);
-    }
-    public function forceDelete($id){
-       $comic = Comic::onlyTrashed()->find($id);
-       $comic->forceDelete();
+    // public function restore($id){
+    //    $comic = Comic::withTrashed()->find($id);
+    //     $comic->restore();
+    //     return redirect()->route('comics.index')->with('restore', $comic->title);
+    // }
+    // public function forceDelete($id){
+    //    $comic = Comic::onlyTrashed()->find($id);
+    //    $comic->forceDelete();
 
-        return redirect()->route('comics.trash')->with('deleted', $comic->title);
-    }
+    //     return redirect()->route('comics.trash')->with('deleted', $comic->title);
+    // }
 }
