@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic;
 class ComicController extends Controller
-{
+{   
     /**
      * Display a listing of the resource.
      *
@@ -52,9 +52,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
    {
-        // $comic=Comic::findOrFail($id);
+        $comic=Comic::withTrashed()->findOrFail($id);
         
         return view('comics.show',compact('comic'));
     }
@@ -65,8 +65,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comic $comic)
-    {
+    public function edit($id)
+    {   
+        $comic=Comic::withTrashed()->findOrFail($id);
         return view('comics.edit',compact('comic'));
     }
 

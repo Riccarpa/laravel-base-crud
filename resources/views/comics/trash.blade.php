@@ -6,9 +6,9 @@
 
     <div class="container">
      
-      <div class="d-flex">
+      <div class="d-flex flex-wrap justify-content-center">
           @foreach ($comics as $comic)
-          <div class="card m-2" style="width: 18rem;">
+          <div class="card m-2 col-3" ">
               <img src="{{$comic->thumb}}" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{$comic->title}}</h5>
