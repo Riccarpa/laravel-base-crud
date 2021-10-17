@@ -18,7 +18,6 @@
                 <h5 class="card-title">{{$comic->title}}</h5>
                 <p>{{$comic->price}}€</p>
                 <div class="d-flex">
-                  <a href="{{route('comics.show',$comic->id)}}" class="btn btn-primary me-1">Dettagli</a>
                   <form method="POST" action="{{route('comics.restore',$comic->id)}}" id="restore-comic">
                     @method('patch')
                     @csrf

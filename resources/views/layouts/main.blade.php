@@ -7,7 +7,7 @@
     <title>Comics | @yield('title')</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
-<body>
+<body class="bg-dark">
     @include('includes.header')
 
     @yield('content')

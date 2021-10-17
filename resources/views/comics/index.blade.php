@@ -21,24 +21,26 @@
       </div>
       @endif
       <div class="d-flex  flex-wrap">
-          @foreach ($comics as $comic)
-          <div class="card col-3 my-2">
-              <a href="{{route('comics.show',$comic->id)}}"><img src="{{$comic->thumb}}" class="card-img-top" alt="..."></a>
-              <div class="card-body">
-                <h5 class="card-title">{{$comic->title}}</h5>
-                <p class="text-center">{{$comic->price}}€</p>
-                <div id="buttons" class="d-flex justify-content-center">
-                  <a href="{{route('comics.show',$comic->id)}}" class="btn btn-primary me-1">Dettagli</a>
-                  <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-warning me-1">Modifica</a>
-                  <form method="POST" action="{{route('comics.destroy',$comic->id)}}" id="delete-comic">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">Elimina</button>
-                  </form>
+          <div class="row g-4">
+            @foreach ($comics as $comic)
+            <div class="card col-3 bg-dark">
+                <a href="{{route('comics.show',$comic->id)}}"><img src="{{$comic->thumb}}" class="card-img-top" alt="..."></a>
+                <div class="card-body text-light">
+                  <h5 class="card-title">{{$comic->title}}</h5>
+                  <p class="text-center">{{$comic->price}}€</p>
+                  <div id="buttons" class="d-flex justify-content-center">
+                    <a href="{{route('comics.show',$comic->id)}}" class="btn btn-primary me-1">Dettagli</a>
+                    <a href="{{route('comics.edit',$comic->id)}}" class="btn btn-warning me-1">Modifica</a>
+                    <form method="POST" action="{{route('comics.destroy',$comic->id)}}" id="delete-comic">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit" class="btn btn-danger">Elimina</button>
+                    </form>
+                  </div>
                 </div>
               </div>
-            </div>
-          @endforeach
+            @endforeach
+          </div>
         </div>
         
         @else
