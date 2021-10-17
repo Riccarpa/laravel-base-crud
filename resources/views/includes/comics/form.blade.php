@@ -1,4 +1,6 @@
 <div class="container text-light">
+
+
     @if($comic->exists)
     <form method="POST" action="{{route('comics.update',$comic->id)}}" class="row g-3">
     @method('PATCH')
@@ -6,6 +8,19 @@
     @else
     <form method="POST" action="{{route('comics.store',$comic->id)}}" class="row g-3">
     @endif
+
+      
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+
         @csrf
         <div class="col-md-6">
           <label for="title" class="form-label">Titolo</label>
